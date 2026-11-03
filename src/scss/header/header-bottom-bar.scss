@@ -1,0 +1,45 @@
+.bottom-bar {
+	width: 1280px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top: 1px solid #F0F0F0;
+	box-shadow: 0px 1px 5px rgba(128, 128, 128, 0.103);
+}
+
+.bottom-bar-menu {
+	width: 1141px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 12px;
+	text-transform: uppercase;
+	list-style-type: none;
+	li {
+		font-weight: 600;
+		cursor: pointer;
+		a {
+			text-decoration: none;
+			color: #9F9F9F;
+		}
+	}
+	.ofertas {
+		color: #3019B2;
+	}
+}
+
+.bottom-bar-last-box {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	height: 20px;
+	width: 108px;
+	cursor: pointer;
+	img {
+		width: 20px;
+		height: 20px;
+	}
+}
+	
