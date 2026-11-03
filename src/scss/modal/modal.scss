@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+
+.popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.popup-container {
+	width: 769px;
+	height: 300px;
+	background: white;
+	padding: 20px;
+	border-radius: 6px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 87px;
+	.img-container {
+		width: 247px;
+		height: 193px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.popup-description {
+		width: 328px;
+		height: 199px;
+		text-align: left;
+		display: grid;
+
+		h2 {
+			font-size: 20px;
+			color: #3F3F40;
+		}
+		.price {
+			font-size: 20px;
+			color: #3F3F40;
+			font-weight: 600;
+		}
+		.long-description {
+			font-family: 'Work Sans', 'sans serif';
+			font-size: 10px;
+			color: #9F9F9F;	
+		}
+		.details {
+			font-family: 'Work Sans', 'sans serif';
+			font-size: 11px;
+			font-weight: 600;
+			color: #3442B5;
+			cursor: pointer;
+		}
+		.comprar-button-row {
+			width: 310px;
+			height: 36px;
+			display: flex;
+			gap: 12px;
+			.quantity-menu-container {
+				width: 110px;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 10px;
+				border: 1px solid #D9D9D9;
+				border-radius: 4px;
+				button {
+					border: none;
+					background-color: transparent;
+					cursor: pointer;
+				}
+				img {
+					width: 21px;
+					height: 20px;
+				}
+				span {
+					font-size: 16px;
+					font-weight: 500;
+					color: #271C47;
+				}
+			}
+			.comprar-button {
+				width: 188px;
+				height: 36px;
+				border: none;
+				outline: none;
+				border-radius: 6px;
+				background-color: #F7CA11;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-transform: uppercase;
+				color: #271C47;
+				font-size: 14px;
+				font-weight: 700;
+				cursor: pointer;
+			}
+		}	
+	}
+	.close-button-container {
+		position: absolute;
+		top: 16px;
+		right: 44px;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+		.close-button {
+			position: relative;
+		}
+		img {
+			color: #707070;
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			
+		}
+	}
+}

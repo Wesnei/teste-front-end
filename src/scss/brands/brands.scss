@@ -1,0 +1,40 @@
+.brands-container {
+	width: 1250px;
+	height: 288px;
+	margin-top: 90px;
+	.title-container {
+		width: 100%;
+		height: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 32px;
+		h3 {
+			font-size: 30px;
+			font-weight: 700;
+			color: #3442B5;
+		}
+	}
+	.circle-container {
+		width: 1223px;
+		height: 211px;
+		display: flex;
+		gap: 42px;	
+		.circle {
+			width: 211px;
+			height: 100%;
+			border-radius: 100%;
+			box-shadow: 0 7px 20px 0 rgba(0,0,0,0.13);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			border: none;
+			background-color: transparent;
+			img {
+				width: 117px;
+				height: 35px;
+			}
+		}
+	}
+}
