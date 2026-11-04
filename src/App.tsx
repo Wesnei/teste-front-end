@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -13,27 +13,35 @@ import ShowcaseTwo from './components/showcaseTwo/ShowcaseTwo';
 
 function App() {
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+
     AOS.init({
-      duration: 800, // Duração da animação
-      once: true,    // Anima apenas uma vez ao rolar
+      duration: 800,
+      once: true,
+      disable: prefersReducedMotion,
     });
   }, []);
 
   return (
-    <main className="App">
-      <header className="App-header">
-        <Header />
-      </header>
-      <Banner />
-      <Categories />
-      <ShowcaseOne />
-      <Partners />
-      <ShowcaseTwo />
-      <Partners />
-      <Brands />
-      <ShowcaseTwo />
+    <div className="App">
+      <a className="skip-link" href="#conteudo-principal">
+        Pular para o conteúdo
+      </a>
+      <Header />
+      <main id="conteudo-principal">
+        <Banner />
+        <Categories />
+        <ShowcaseOne />
+        <Partners headingId="parceiros-1" />
+        <ShowcaseTwo headingId="vitrine-relacionados-2" />
+        <Partners headingId="parceiros-2" />
+        <Brands />
+        <ShowcaseTwo headingId="vitrine-relacionados-3" />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }
 

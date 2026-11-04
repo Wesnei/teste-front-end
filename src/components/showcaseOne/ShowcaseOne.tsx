@@ -5,11 +5,11 @@ import Tags from './Tags';
 export default function ShowcaseOne() {
   return (
     <section
-      id="first-showcase"
-      aria-labelledby="showcase-title"
+      id="vitrine-principal"
+      aria-labelledby="vitrine-principal-titulo"
       className="showcase-section-container"
     >
-      <Title />
+      <Title id="vitrine-principal-titulo" />
       <Tags />
       <Showcase />
     </section>

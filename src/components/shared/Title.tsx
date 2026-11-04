@@ -1,12 +1,14 @@
-export default function Title() {
+type Props = {
+  id: string;
+  children?: string;
+};
+
+export default function Title({ id, children = 'Produtos Relacionados' }: Props) {
   return (
     <div className="showcase-title-container">
-      <p aria-label="Ver todos" className="showcase-hidden-link">
-        Ver todos
-      </p>
-      <hr />
-      <h3 id="showcase-title">Produtos Relacionados</h3>
-      <hr />
+      <hr aria-hidden="true" />
+      <h2 id={id}>{children}</h2>
+      <hr aria-hidden="true" />
     </div>
   );
 }

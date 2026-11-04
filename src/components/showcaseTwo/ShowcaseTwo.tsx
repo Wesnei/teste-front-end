@@ -1,11 +1,17 @@
 import Showcase from '../shared/Showcase';
 import Title from '../shared/Title';
 
-export default function ShowcaseTwo() {
+type Props = {
+  headingId: string;
+};
+
+export default function ShowcaseTwo({ headingId }: Props) {
   return (
-    <section aria-labelledby="showcase-title" className="showcase-section-container">
-      <Title />
-      <span className="showcaseTwo-span">Ver todos</span>
+    <section aria-labelledby={headingId} className="showcase-section-container">
+      <Title id={headingId} />
+      <a className="showcaseTwo-span" href="#vitrine-principal">
+        Ver todos
+      </a>
       <Showcase />
     </section>
   );

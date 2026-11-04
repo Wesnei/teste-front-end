@@ -6,8 +6,17 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler' // Usa a API moderna do Dart Sass e elimina o aviso do legacy-js-api
-      }
-    }
+        api: 'modern-compiler',
+      },
+    },
+  },
+  server: {
+    proxy: {
+      '/econverse-api': {
+        target: 'https://app.econverse.com.br',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/econverse-api/, ''),
+      },
+    },
   },
 });
