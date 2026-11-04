@@ -1,31 +1,98 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# 🛒 Econverse E-commerce - Front-End Landing Page
 
-### Vem ser #Econverse!
+> Projeto de uma Single Page Application (SPA) responsiva desenvolvida como vitrine de e-commerce, construída com foco em boas práticas de engenharia de software, arquitetura de componentes e testes automatizados.
 
-Segue abaixo as instruções para a execução do teste.
+---
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail gustavo.cipriano@econverse.com.br com o título **Teste Vaga FrontEnd**
+## 🚀 Tecnologias e Ferramentas
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+Este projeto foi desenvolvido utilizando uma stack moderna e robusta de front-end:
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+* **Core:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Estilização:** [Sass (SCSS)](https://sass-lang.com/) com compilador moderno (`modern-compiler`)
+* **Testes Automatizados:** [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) + [JSDOM](https://github.com/jsdom/jsdom)
+* **Gerenciamento de Pacotes:** npm
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+---
 
-**Boa sorte! ;)**
+## 📂 Arquitetura e Principais Funcionalidades
+
+* **Single Page Application (SPA):** Navegação fluida e centralizada na landing page principal.
+* **Seção "Navegue por marcas":** Componentes circulares refinados (*pixel-perfect* em relação ao layout do Figma), totalmente limpos, sem bordas indesejadas e com sombras suaves de elevação.
+* **Vitrine de Produtos:** Listagem dinâmica de itens com suporte a interações e modais.
+* **Responsividade Completa:** Layout adaptável para diferentes resoluções de tela (mobile, tablet e desktop).
+* **Proxy de Desenvolvimento:** Configuração integrada no Vite para direcionamento de requisições de API (`/econverse-api`) evitando problemas de CORS.
+
+---
+
+## ⚙️ Como Executar o Projeto Localmente
+
+Siga os passos abaixo para rodar o projeto na sua máquina:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/Wesnei/teste-front-end.git
+   cd teste-front-end
+
+```
+
+2. Instale as dependências:
+npm install --legacy-peer-deps
+
+```
+
+
+3. **Inicie o servidor de desenvolvimento:**
+```bash
+npm run dev
+
+```
+
+
+O projeto estará acessível em `http://localhost:5173` (ou a porta indicada no terminal).
+
+---
+
+## 🧪 Executando os Testes Automatizados
+
+O projeto conta com uma suíte de testes unitários configurada com **Vitest** e **Testing Library** para validar a renderização da aplicação e integridade dos componentes da página.
+
+Para rodar os testes em modo de execução única (CLI/CI):
+
+```bash
+npm run test:run
+
+```
+
+Para rodar os testes em modo interativo (observação em tempo real):
+
+```bash
+npm run test
+
+```
+
+---
+
+## 🛠️ Configuração do Build de Produção
+
+Para gerar os arquivos otimizados para produção:
+
+```bash
+npm run build
+
+```
+
+Para pré-visualizar a build localmente:
+
+```bash
+npm run preview
+
+```
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido com foco em qualidade de código, arquitetura limpa e alta performance.
+
