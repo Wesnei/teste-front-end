@@ -1,5 +1,5 @@
 import { Minus, Plus, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import type { Product } from '../../types/product';
 
 type Props = {
@@ -10,6 +10,9 @@ type Props = {
 
 export default function Modal({ product, formatPrice, closePopup }: Props) {
   const [quantity, setQuantity] = useState(1);
+  const titleId = useId();
+  const descriptionId = useId();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -23,35 +26,49 @@ export default function Modal({ product, formatPrice, closePopup }: Props) {
     return qty < 10 ? `0${qty}` : `${qty}`;
   };
 
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closePopup();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [closePopup]);
+
   return (
-    <div
-      role="dialog"
-      aria-labelledby={product.productName}
-      aria-describedby={product.productName}
-      className="popup-overlay"
-      aria-modal="true"
-      tabIndex={-1}
-    >
-      <div className="popup-container">
+    <div className="popup-overlay" onClick={closePopup}>
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+        aria-describedby={descriptionId}
+        className="popup-container"
+        onClick={(event) => event.stopPropagation()}
+      >
         <div className="img-container">
-          <img src={product.photo} loading="lazy" alt={product.productName} />
+          <img src={product.photo} alt={product.productName} />
         </div>
         <div className="popup-description">
-          <h2>{product.productName}</h2>
-          <p className="price">{`${formatPrice(product.price)}`}</p>
-          <p className="long-description">
-            Many desktop publishing packages and web page editors now many
-            desktop publishing
+          <h2 id={titleId}>{product.productName}</h2>
+          <p className="price">{formatPrice(product.price)}</p>
+          <p id={descriptionId} className="long-description">
+            {product.descriptionShort}
           </p>
-          <p className="details">Veja mais detalhes do produto &gt;</p>
+          <a className="details" href="#vitrine-principal">
+            Veja mais detalhes do produto &gt;
+          </a>
           <div className="comprar-button-row">
             <div className="quantity-menu-container">
-              <button onClick={decreaseQuantity} aria-label="Decrease quantity" type="button">
-                <Minus size={20} color="#271C47" />
+              <button onClick={decreaseQuantity} aria-label="Diminuir quantidade" type="button">
+                <Minus size={20} color="#271C47" aria-hidden="true" />
               </button>
-              <span>{formatQuantity(quantity)}</span>
-              <button onClick={increaseQuantity} aria-label="Increase quantity" type="button">
-                <Plus size={20} color="#271C47" />
+              <span aria-live="polite">{formatQuantity(quantity)}</span>
+              <button onClick={increaseQuantity} aria-label="Aumentar quantidade" type="button">
+                <Plus size={20} color="#271C47" aria-hidden="true" />
               </button>
             </div>
 
@@ -61,12 +78,13 @@ export default function Modal({ product, formatPrice, closePopup }: Props) {
           </div>
         </div>
         <button
+          ref={closeButtonRef}
           className="close-button-container"
-          aria-label="Close popup"
+          aria-label="Fechar detalhes do produto"
           onClick={closePopup}
           type="button"
         >
-          <X size={16} color="#707070" />
+          <X size={16} color="#707070" aria-hidden="true" />
         </button>
       </div>
     </div>

@@ -1,52 +1,55 @@
-import { Heart, Package, Search, ShoppingCart, UserCircle } from 'lucide-react';
+import { Search } from 'lucide-react';
+import type { FormEvent } from 'react';
 
 export default function MiddleBar() {
+  const handleSearch = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <div className="middle-bar">
-      <nav className="middle-bar-menu" aria-label="Main navigation">
+      <div className="middle-bar-menu">
         <div className="middle-bar-left-box">
-          <a href="/" aria-label="Econverse home">
-            <img src="/fav.png" alt="Econverse logo" />
+          <a href="/" aria-label="Página inicial da Econverse">
+            <img src="/fav.png" alt="Econverse" width={139} height={46} />
           </a>
         </div>
 
         <form
           className="middle-bar-center-box"
-          action="/search"
-          method="GET"
-          aria-label="Search form"
+          role="search"
+          onSubmit={handleSearch}
         >
-          <label htmlFor="search-input" style={{ display: 'none' }}>
+          <label htmlFor="search-input" className="sr-only">
             Buscar produtos
           </label>
           <input
             id="search-input"
             name="q"
-            type="text"
+            type="search"
             placeholder="O que você está buscando?"
-            aria-label="Digite o que você está buscando"
-            required
+            autoComplete="off"
           />
-          <button type="submit" aria-label="Buscar">
-            <Search size={28} color="#9F9F9F" />
+          <button type="submit" aria-label="Buscar produtos">
+            <Search size={28} color="#9F9F9F" aria-hidden="true" />
           </button>
         </form>
 
-        <div className="middle-bar-right-box" aria-label="User actions">
-          <a href="/orders" aria-label="Minhas compras">
-              <img src="/Box.png" alt="caixa" />
+        <nav className="middle-bar-right-box" aria-label="Conta e pedidos">
+          <a href="/pedidos" aria-label="Meus pedidos">
+            <img src="/Box.png" alt="" width={32} height={32} />
           </a>
-          <a href="/favorites" aria-label="Favoritos">
-            <img src="/Heart.png" alt="favoritos" />
+          <a href="/favoritos" aria-label="Favoritos">
+            <img src="/Heart.png" alt="" width={32} height={32} />
           </a>
-          <a href="/profile" aria-label="Perfil do usuário">
-            <img src="/UserCircle.png" alt="perfil do usuário" />
+          <a href="/perfil" aria-label="Perfil do usuário">
+            <img src="/UserCircle.png" alt="" width={32} height={32} />
           </a>
-          <a href="/cart" aria-label="Carrinho de compras">
-            <img src="/ShoppingCart.png" alt="carrinho de compras" />
+          <a href="/carrinho" aria-label="Carrinho de compras">
+            <img src="/ShoppingCart.png" alt="" width={32} height={32} />
           </a>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
   );
 }

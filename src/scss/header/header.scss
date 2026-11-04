@@ -2,11 +2,10 @@
 @use 'header-middle-bar.scss';
 @use 'header-bottom-bar.scss';
 
-.App-header {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	height: 144px;
-	background-color: #FFFFFF;
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
 }
-

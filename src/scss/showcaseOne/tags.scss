@@ -1,33 +1,38 @@
 .showcaseOne-tags-container {
-	width: 1280px;
-	height: 40px;
-	ul {
-		list-style-type: none;
-		display: flex;
-		align-items: center;
-		border-left: 2px solid #DEDEDE;
-	}
-	a {
-		font-weight: 400;
-		text-decoration: none;
-		color:#3B3B3B;
-	}
-	li {
-		cursor: pointer;
-		width: 214.17px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: #3B3B3B;
-		font-size: 16px;
-		border-right: 2px solid #DEDEDE;
-		border-bottom: 2px solid #DEDEDE;
-		border-top: 2px solid #DEDEDE;
-		text-transform: uppercase;
-	}
-	.showcaseOne-celular {
-		color: #3442B5;
-		font-weight: 700;
-	}
+  width: min(1280px, 100%);
+  overflow-x: auto;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    border-left: 2px solid #dedede;
+    min-width: 720px;
+  }
+
+  a {
+    font-weight: 400;
+    text-decoration: none;
+    color: #3b3b3b;
+  }
+
+  li {
+    flex: 1;
+    min-width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b3b3b;
+    font-size: 16px;
+    border-right: 2px solid #dedede;
+    border-bottom: 2px solid #dedede;
+    border-top: 2px solid #dedede;
+    text-transform: uppercase;
+  }
+
+  .showcaseOne-celular {
+    color: #3442b5;
+    font-weight: 700;
+  }
 }

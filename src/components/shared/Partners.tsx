@@ -1,27 +1,30 @@
-export default function Partners() {
-  return (
-    <section className="partners-container" data-aos="zoom-in">
-      <div className="partners">
-        <div className="partners-text-container">
-          <h3>Parceiros</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
-          <div className="partners-button">
-            <span>Confira</span>
-          </div>
-        </div>
-        <img src="/parceiros.png" loading="lazy" alt="devices store" />
-      </div>
+type Props = {
+  headingId: string;
+};
 
-      <div className="partners">
-        <div className="partners-text-container">
-          <h3>Parceiros</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
-          <div className="partners-button">
-            <span>Confira</span>
-          </div>
-        </div>
-        <img src="/parceiros.png" loading="lazy" alt="devices store" />
+function PartnerCard() {
+  return (
+    <article className="partners">
+      <div className="partners-text-container">
+        <h3>Parceiros</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <a className="partners-button" href="#vitrine-principal">
+          Confira
+        </a>
       </div>
+      <img src="/parceiros.png" loading="lazy" alt="" />
+    </article>
+  );
+}
+
+export default function Partners({ headingId }: Props) {
+  return (
+    <section className="partners-container" data-aos="zoom-in" aria-labelledby={headingId}>
+      <h2 id={headingId} className="sr-only">
+        Parceiros
+      </h2>
+      <PartnerCard />
+      <PartnerCard />
     </section>
   );
 }

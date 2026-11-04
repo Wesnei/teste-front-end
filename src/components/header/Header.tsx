@@ -1,15 +1,13 @@
-import BottomBar from "./BottomBar";
-import MiddleBar from "./MiddleBar";
-import TopBar from "./TopBar";
+import BottomBar from './BottomBar';
+import MiddleBar from './MiddleBar';
+import TopBar from './TopBar';
 
-const Home = () => {
-	return (
-    <section className="header-container">
+export default function Header() {
+  return (
+    <header className="site-header">
       <TopBar />
       <MiddleBar />
       <BottomBar />
-    </section>
+    </header>
   );
 }
-
-export default Home;

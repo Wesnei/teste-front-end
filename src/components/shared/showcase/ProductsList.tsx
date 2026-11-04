@@ -5,6 +5,7 @@ type Props = {
   productsObj: ProductsResponse;
   formatPrice: (price: number) => string;
   handleBuyClick: (product: Product) => void;
+  cardWidth: number;
 };
 
 export default function ProductsList({
@@ -12,6 +13,7 @@ export default function ProductsList({
   productsObj,
   formatPrice,
   handleBuyClick,
+  cardWidth,
 }: Props) {
   return (
     <div className="slider-container" data-aos="fade-up" data-aos-delay="200">
@@ -24,25 +26,23 @@ export default function ProductsList({
       >
         {productsObj.products.map((product, index) => (
           <li key={`${product.productName}-${index}`}>
-            <img src={product.photo} alt={product.productName} loading="lazy" />
-            <h4 className="product-name">{product.productName}</h4>
-            <p className="old-price">{`${formatPrice(product.price + 200)}`}</p>
-            <p className="price">{`${formatPrice(product.price)}`}</p>
-            <p className="price-interest">{`ou 5x de ${formatPrice(
-              (product.price * 1.15) / 5,
-            )} sem juros`}</p>
-            <p className="free-delivery">Frete grátis</p>
-            <button
-              className="buy-button"
-              onClick={() => handleBuyClick(product)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  handleBuyClick(product);
-                }
-              }}
-            >
-              <p>Comprar</p>
-            </button>
+            <article className="product-card" style={{ width: cardWidth }}>
+              <img src={product.photo} alt={product.productName} loading="lazy" />
+              <h3 className="product-name">{product.productName}</h3>
+              <p className="old-price">{formatPrice(product.price + 200)}</p>
+              <p className="price">{formatPrice(product.price)}</p>
+              <p className="price-interest">
+                {`ou 5x de ${formatPrice((product.price * 1.15) / 5)} sem juros`}
+              </p>
+              <p className="free-delivery">Frete grátis</p>
+              <button
+                className="buy-button"
+                type="button"
+                onClick={() => handleBuyClick(product)}
+              >
+                Comprar
+              </button>
+            </article>
           </li>
         ))}
       </ul>

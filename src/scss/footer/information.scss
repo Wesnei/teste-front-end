@@ -1,71 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
-
 .information-container {
-	width: 1440px;
-	height: 282px;
-	background-color: #F4F4F4;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 90px;
-	padding: 42px 80px;
-	.social-container {
-		width: 354px;
-		height: 159px;
-		display: grid;
-		gap: 27px;
-		img {
-			width: 164px;
-			height: 48px;
-		}
-		span {
-			width: 354px;
-			height: 42px;
-			font-weight: 300;
-			font-size: 14px;
-			color: #3F3F40;
-		}
-		.social-icons {
-			width: 124px;
-			height: 24px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 26px;
-			cursor: pointer;
-			img {
-				width: 24px;
-				height: 24px;
-			}
-		}
-	}
-	hr {
-		height: 100%;
-		color: #282828;
-		opacity: 18%;
-	}
-	.links-container {
-		width: 631px;
-		height: fit-content;
-		display: flex;
-		gap: 100px;
-		div {
-			width: fit-content;
-			height: 100%;
-			display: grid;
-			gap: 20px;
-			color: #222222;
-			opacity: 71%;
-			h5 {
-				font-size: 16px;
-				font-weight: 700;
-			}
-			a {
-				font-family: 'Work Sans', sans-serif;
-				font-size: 14px;
-				color: #222222;
-				text-decoration: none;
-			}
-		}
-	}
+  width: 100%;
+  min-height: 282px;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px 90px;
+  padding: 42px 24px;
+
+  .social-container {
+    max-width: 354px;
+    display: grid;
+    gap: 27px;
+
+    img {
+      width: 164px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 14px;
+      color: #3f3f40;
+    }
+
+    .social-icons {
+      width: 124px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+  }
+
+  hr {
+    height: 159px;
+    color: #282828;
+    opacity: 0.18;
+  }
+
+  .links-container {
+    display: flex;
+
+    div {
+      display: grid;
+      gap: 20px;
+      color: #222222;
+
+      h3 {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      a {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        color: #222222;
+        text-decoration: none;
+      }
+    }
+  }
 }
