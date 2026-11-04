@@ -1,10 +1,11 @@
-@import 'header/header.scss';
-@import 'banner/banner.scss';
-@import 'categories/categories.scss';
-@import 'shared.scss';
-@import 'partners/partners';
-@import 'brands/brands.scss';
-@import 'footer/footer.scss';
+@use 'header/header.scss';
+@use 'banner/banner.scss';
+@use 'categories/categories.scss';
+@use 'shared.scss';
+@use 'partners/partners';
+@use 'brands/brands.scss';
+@use 'footer/footer.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 $GRAY-1: #9F9F9F;
 

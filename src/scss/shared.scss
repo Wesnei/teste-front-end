@@ -1,6 +1,6 @@
-@import 'showcaseOne/tags.scss';
-@import 'showcaseTwo/span.scss';
-@import 'modal/modal.scss';
+@use 'showcaseOne/tags.scss';
+@use 'showcaseTwo/span.scss';
+@use 'modal/modal.scss';
 
 .showcase-section-container {
 	width: 1364px;

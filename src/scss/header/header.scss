@@ -1,6 +1,6 @@
-@import 'header-top-bar.scss';
-@import 'header-middle-bar.scss';
-@import 'header-bottom-bar.scss';
+@use 'header-top-bar.scss';
+@use 'header-middle-bar.scss';
+@use 'header-bottom-bar.scss';
 
 .App-header {
 	display: flex;
