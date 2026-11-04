@@ -1,6 +1,6 @@
-@import 'newsletter.scss';
-@import 'information.scss';
-@import 'bottomBar.scss';
+@use 'newsletter.scss';
+@use 'information.scss';
+@use 'bottomBar.scss';
 
 .footer-container {
 	width: 1441px;
